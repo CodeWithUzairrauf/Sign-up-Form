@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up-Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <img src="photo-1585202900225-6d3ac20a6962.avif" alt="" class="back-ground-img">
+        <img src="odin-lined.png" alt="" class="odin-logo">
+        <p class="back-ground-img-author-credits">Photo by <a href="https://unsplash.com/@haliewestphoto">
+                Halie West</a> or <a
+                href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">Unsplash</a></p>
+    </div>
+    <div class="main-content">
+        <h3>
+            This is not a real online service! You know you need something like this in your life to realize your
+            deepest dreams. <br> Sign up now to get started.
+        </h3>
+
+        <h3>You know you want to</h3>
+
+
+        <h3>Let's do this!</h3>
+
+        <form>
+            <label for="firstName">
+               First Name <input type="text" id="firstName" class="firstname" required> 
+            </label>
+            <label for="lastName">
+                Last Name <input type="text" id="lastName" class="lastName" required>
+            </label>
+            <label for="Email">
+            Email<input type="email" id="Email" class="Email" >
+            </label>
+            <label for="phoneNumber">
+            Phone Number <input type="number" class="phoneNumber" id="phoneNumber">
+            </label>
+            <label for="password">
+             Password <input type="text" class="password" id="password" required>   
+            </label>
+            <label for="confirmPassword">
+             Confirm Password <input type="text" class="confirmPassword" id="confirmPassword" required>
+            </label>
+            <button type="submit">Create Account</button>
+            <p>Already have an account ? <a href="">Log in</a> 
+        </form>
+
+    </div>
+
+    <script>
+      const form = document.querySelector('form');
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirmPassword');
+
+      form.addEventListener('submit', function(e) {
+        // Remove previous error states
+        password.classList.remove('error');
+        confirmPassword.classList.remove('error');
+
+        if (password.value !== confirmPassword.value) {
+          password.classList.add('error');
+          confirmPassword.classList.add('error');
+          e.preventDefault();
+        }
+      });
+    </script>
+
+</body>
+
+</html>
